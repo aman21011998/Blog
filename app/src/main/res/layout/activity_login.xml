@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbackground"
+    tools:context="com.thenewboston.blogger.LoginActivity">
+
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/theme_primary"
+        android:id="@+id/tb"
+        ></android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tb"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="21dp"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:padding="5dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="Enter the credentials for login" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textview_background"
+        android:hint="Name...." />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/email"
+        android:layout_below="@+id/email"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:padding="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textview_background"
+        android:inputType="textPassword"
+        android:hint="Password...."
+        />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_below="@+id/editText3"
+        android:layout_marginEnd="97dp"
+        android:layout_marginTop="65dp"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:background="@drawable/button_background"
+        />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/login"
+        android:layout_alignEnd="@+id/editText3"
+        android:background="@color/gainsboro"
+        app:srcCompat="@drawable/eye1" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_below="@+id/login"
+        android:layout_marginEnd="44dp"
+        android:layout_marginTop="22dp"
+        android:clickable="true"
+        android:onClick="register"
+        android:padding="10dp"
+        android:text="Need a new account?"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText3"
+        android:layout_centerVertical="true"
+        android:text="Forgot password?"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:onClick="forgetpassword"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        />
+
+    <com.twitter.sdk.android.core.identity.TwitterLoginButton
+        android:id="@+id/tlogin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="74dp"
+
+         />
+
+</RelativeLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v7.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/textview_background"
+    android:layout_marginBottom="20dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/postimage"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/add_btn" />
+
+        <TextView
+            android:id="@+id/posttitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/postimage"
+            android:layout_marginTop="2dp"
+            android:padding="10dp"
+            android:text="Post title is displayed here"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/posttitle"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/grey"></View>
+
+        <TextView
+            android:id="@+id/postdesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/posttitle"
+            android:padding="10dp"
+            android:text="Post desc is displayed here"
+            android:textIsSelectable="true"
+            android:textSize="15sp"
+
+            />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/postimage"
+            android:layout_below="@+id/postdesc"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginTop="10dp"
+            android:hint="~Username"
+            android:textColor="@color/slate"
+            android:textIsSelectable="true"
+            android:textSize="16sp"
+
+            android:textStyle="italic" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignStart="@+id/view"
+            android:layout_below="@+id/username"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/likebtn_grey"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                app:srcCompat="@drawable/thums_grey" />
+
+            <ImageButton
+                android:id="@+id/comment"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="112dp"
+                android:background="@color/white"
+                android:layout_toEndOf="@+id/likebtn_grey"
+                app:srcCompat="@drawable/comment" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+

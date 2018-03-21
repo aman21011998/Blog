@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.thenewboston.blogger.BlogSingleActivity">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:id="@+id/tb"
+        android:background="@color/lightred"
+        ></android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/blogimage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tb"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+
+        app:srcCompat="@drawable/add_btn" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="4dp"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/blogimage"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/textview_background"
+        android:hint="Title" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/title"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="4dp"
+        android:background="@drawable/textview_background"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+        android:hint="Description"
+        android:layout_alignParentStart="true"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/removepost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/lightred"
+        android:textAllCaps="false"
+        android:textColor="@color/yellow"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        android:text="Remove post" />
+
+</RelativeLayout>
