@@ -1,24 +1,19 @@
-package com.thenewboston.blogger;
+package com.amanachintyanikhil.blogapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ToolbarWidgetWrapper;
+import android.transition.Explode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,7 +25,6 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.theartofdev.edmodo.cropper.CropImage;
 
-import java.sql.DatabaseMetaData;
 
 public class PostActivity extends AppCompatActivity {
 
@@ -52,6 +46,7 @@ public class PostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_post);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        initAnimation();
         rn=new MyStringRandomGen();
         mauth=FirebaseAuth.getInstance();
         id=mauth.getCurrentUser().getUid();
@@ -64,7 +59,8 @@ public class PostActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.navigationicon);
         getSupportActionBar().show();
 
-        mBlog= FirebaseDatabase.getInstance().getReference().child("Blog");
+
+        mBlog= FirebaseDatabase.getInstance().getReference().child("Vlog");
         progressDialog=new ProgressDialog(this);
         imageButton=(ImageButton)findViewById(R.id.imageButton);
         title=(EditText)findViewById(R.id.title);
@@ -90,6 +86,20 @@ public class PostActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        finishAfterTransition();
+        return super.onSupportNavigateUp();
+    }
+
+    private void initAnimation()
+    {
+        Explode entertransition=new Explode();
+        entertransition.setDuration(getResources().getInteger(R.integer.anim_duration_long));
+        getWindow().setEnterTransition(entertransition);
+    }
+
     private void startposting()
     {
         final String blog_title=title.getText().toString();
@@ -107,7 +117,7 @@ public class PostActivity extends AppCompatActivity {
 
                     downloaduri=taskSnapshot.getDownloadUrl();
                     String blogkey=rn.generateRandomString();
-                    final DatabaseReference newpost=mBlog.child(blogkey);
+                    final DatabaseReference newpost=mBlog.push();
                     //final DatabaseReference newpost=mBlog.push();
                     mUser.addValueEventListener(new ValueEventListener() {
                         @Override

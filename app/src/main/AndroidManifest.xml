@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.thenewboston.blogger">
+    package="com.amanachintyanikhil.blogapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -36,7 +36,7 @@
         <activity
             android:name=".SetupActivity"
             android:parentActivityName=".RegisterActivity" />
-        <activity android:name=".Homepage" />
+        <activity android:name=".TweetActivity" />
         <activity
             android:name=".UserProfile"
             android:parentActivityName=".MainActivity" />
@@ -47,7 +47,16 @@
             android:name=".MyPosts"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".FrontActivity" />
-        <activity android:name=".CommentActivity"
+        <activity
+            android:name=".CommentActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ProfileView"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Settings"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".AllFollowers"
             android:parentActivityName=".MainActivity"
             ></activity>
     </application>

@@ -1,4 +1,4 @@
-package com.thenewboston.blogger;
+package com.amanachintyanikhil.blogapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -19,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.util.HashMap;
 
@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
         String user_password=password.getText().toString();
         final String user_email=email.getText().toString();
 
-        if(!user_name.isEmpty() && !user_email.isEmpty() && !user_password.isEmpty() && !user_phone.isEmpty())
+        if(!user_name.isEmpty() && !user_email.isEmpty() && !user_password.isEmpty() && !user_phone.isEmpty() && user_phone.length()==10)
         {
             firebaseAuth.createUserWithEmailAndPassword(user_email,user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override

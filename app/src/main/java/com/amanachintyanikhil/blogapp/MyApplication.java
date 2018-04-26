@@ -1,4 +1,4 @@
-package com.thenewboston.blogger;
+package com.amanachintyanikhil.blogapp;
 
 import android.app.Application;
 import android.content.Context;

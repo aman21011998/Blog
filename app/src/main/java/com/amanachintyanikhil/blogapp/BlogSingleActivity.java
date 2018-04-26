@@ -1,15 +1,14 @@
-package com.thenewboston.blogger;
+package com.amanachintyanikhil.blogapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ToolbarWidgetWrapper;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -18,6 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
 
 public class BlogSingleActivity extends AppCompatActivity {
 
@@ -48,10 +48,12 @@ public class BlogSingleActivity extends AppCompatActivity {
         title=(TextView)findViewById(R.id.title);
         description=(TextView)findViewById(R.id.description);
 
-        mBlog= FirebaseDatabase.getInstance().getReference().child("Blog");
+        mBlog= FirebaseDatabase.getInstance().getReference().child("Vlog");
         mauth=FirebaseAuth.getInstance();
 
-        mBlog.child(mPostkey).addValueEventListener(new ValueEventListener() {
+        Log.d("Firebase Key", mPostkey);
+
+        mBlog.child(mPostkey.toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {

@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.thenewboston.blogger.com.amanachintyanikhil.blogapp.MyPosts">
+    tools:context="com.amanachintyanikhil.blogapp.AllFollowers">
 
     <android.support.v7.widget.Toolbar
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:id="@+id/tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
         android:background="@color/lightred"
-        ></android.support.v7.widget.Toolbar>
+        >
 
-    <android.support.v7.widget.RecyclerView
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tb"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="9dp"
-        android:id="@+id/posts"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/lv"
         />
 
 

@@ -1,11 +1,14 @@
-package com.thenewboston.blogger;
+package com.amanachintyanikhil.blogapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.view.View;
 import android.widget.Button;
+
+
 
 public class FrontActivity extends AppCompatActivity {
 
@@ -16,6 +19,8 @@ public class FrontActivity extends AppCompatActivity {
         setContentView(R.layout.activity_front);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+
+        initAnim();
         login=(Button)findViewById(R.id.login);
         register=(Button)findViewById(R.id.register);
 
@@ -34,6 +39,19 @@ public class FrontActivity extends AppCompatActivity {
                 startActivity(register);
             }
         });
+    }
+
+    private void initAnim()
+    {
+        Explode entertransition=new Explode();
+        entertransition.setDuration(getResources().getInteger(R.integer.anim_duration_long));
+        getWindow().setEnterTransition(entertransition);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finishAfterTransition();
+        return true;
     }
 
     @Override

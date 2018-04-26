@@ -1,4 +1,4 @@
-package com.thenewboston.blogger;
+package com.amanachintyanikhil.blogapp;
 
 /**
  * Created by Home on 10-Mar-18.

@@ -1,4 +1,4 @@
-package com.thenewboston.blogger;
+package com.amanachintyanikhil.blogapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

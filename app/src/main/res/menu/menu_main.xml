@@ -18,6 +18,10 @@
     <item android:id="@+id/myposts"
         android:title="My Posts"
         app:showAsAction="never"></item>
+    <item android:title="Followers"
+        android:id="@+id/followers"
+        app:showAsAction="never"
+        ></item>
 <item android:id="@+id/logout"
     android:title="Logout"
     app:showAsAction="never"

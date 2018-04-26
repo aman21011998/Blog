@@ -1,4 +1,4 @@
-package com.thenewboston.blogger;
+package com.amanachintyanikhil.blogapp;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
+
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -67,7 +67,7 @@ public class CommentActivity extends AppCompatActivity {
                 name=dataSnapshot.child("name").getValue().toString();
                 photo=dataSnapshot.child("image").getValue().toString();
 
-                blogid=mComment.child("akdfmf7kfme45lc");
+                blogid=mComment.child(postid);
             }
 
             @Override

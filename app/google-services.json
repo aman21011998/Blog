@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "482284370391",
-    "firebase_url": "https://fir-a772b.firebaseio.com",
-    "project_id": "fir-a772b",
-    "storage_bucket": "fir-a772b.appspot.com"
+    "project_number": "366364208161",
+    "firebase_url": "https://blogapp-baa48.firebaseio.com",
+    "project_id": "blogapp-baa48",
+    "storage_bucket": "blogapp-baa48.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:482284370391:android:40ee71de03c4f660",
+        "mobilesdk_app_id": "1:366364208161:android:5b899741e75e2391",
         "android_client_info": {
-          "package_name": "com.thenewboston.blogger"
+          "package_name": "com.amanachintyanikhil.blogapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "482284370391-dlllur1csq7tqi38tl3dpqu4hdtv3raf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.thenewboston.blogger",
-            "certificate_hash": "bd104117f06a55f7ff5330db592a84197defcdf7"
-          }
-        },
-        {
-          "client_id": "482284370391-iqp6hr3edo0gdbp2hpcqqdoa33tj68re.apps.googleusercontent.com",
+          "client_id": "366364208161-7jqidmir2m06e89hukhga19qhkm4cdtc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCbvnwQElczLrtuBzmAMKRJ3KgQpeAyDNg"
+          "current_key": "AIzaSyDRawtw-sqkt5NtunpNZkA43ltWG0XNjfU"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "482284370391-iqp6hr3edo0gdbp2hpcqqdoa33tj68re.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

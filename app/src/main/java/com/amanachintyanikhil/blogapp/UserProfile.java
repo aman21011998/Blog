@@ -1,4 +1,4 @@
-package com.thenewboston.blogger;
+package com.amanachintyanikhil.blogapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -6,7 +6,10 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.View;
+import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,7 +26,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageActivity;
+
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -65,6 +68,7 @@ public class UserProfile extends AppCompatActivity {
         dob=(EditText)findViewById(R.id.dob);
         //address=(EditText)findViewById(R.id.address);
 
+        initAnimation();
         mUser= FirebaseDatabase.getInstance().getReference().child("User");
         mauth=FirebaseAuth.getInstance();
         mProfile=FirebaseDatabase.getInstance().getReference().child("Profile");
@@ -129,6 +133,16 @@ public class UserProfile extends AppCompatActivity {
 
     }
 
+    private void initAnimation()
+    {
+        Slide entertransition=new Slide();
+        entertransition.setSlideEdge(Gravity.BOTTOM);  //edge from which the sliding will occur
+        entertransition.setDuration(getResources().getInteger(R.integer.anim_duration_long));
+        //entertransition.setInterpolator(new FastOutLinearInInterpolator());
+        entertransition.setInterpolator(new AnticipateOvershootInterpolator());
+        getWindow().setEnterTransition(entertransition);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -150,32 +164,49 @@ public class UserProfile extends AppCompatActivity {
             }
         }
     }
-
+    @Override
+    public boolean onSupportNavigateUp()
+    {
+        finishAfterTransition();
+        return true;
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         pd.setMessage("Saving details....");
         pd.setCanceledOnTouchOutside(false);
         pd.show();
-        StorageReference filepath=mTimeLineStorage.child(mImageuri.getLastPathSegment());
-        filepath.putFile(mImageuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                Uri downloadUri=taskSnapshot.getDownloadUrl();
-                DatabaseReference local=mProfile.child(mauth.getCurrentUser().getUid());
-                String uProffesion=profession.getText().toString();
-                String uDob=dob.getText().toString();
+        if (mImageuri!= null) {
 
-                local.child("profession").setValue(uProffesion);
-                local.child("timelineimage").setValue(downloadUri.toString());
-                local.child("dob").setValue(uDob);
+            StorageReference filepath = mTimeLineStorage.child(mImageuri.getLastPathSegment());
+            filepath.putFile(mImageuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                pd.dismiss();
-                Intent main=new Intent(UserProfile.this,MainActivity.class);
-                startActivity(main);
+                    Uri downloadUri = taskSnapshot.getDownloadUrl();
+                    DatabaseReference local = mProfile.child(mauth.getCurrentUser().getUid());
+                    String uProffesion = profession.getText().toString();
+                    String uDob = dob.getText().toString();
 
-            }
-        });
+                    local.child("profession").setValue(uProffesion);
+                    local.child("timelineimage").setValue(downloadUri.toString());
+                    local.child("dob").setValue(uDob);
+
+                    pd.dismiss();
+                    Intent main = new Intent(UserProfile.this, MainActivity.class);
+                    startActivity(main);
+
+                }
+            });
+        }
+        else {
+            pd.dismiss();
+            Intent main = new Intent(UserProfile.this, MainActivity.class);
+            startActivity(main);
+
+        }
+
+
     }
 }

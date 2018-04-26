@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.thenewboston.blogger.RegisterActivity">
+    tools:context="com.thenewboston.blogger.com.amanachintyanikhil.blogapp.RegisterActivity">
     <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent" android:layout_height="wrap_content"
         android:background="@color/theme_primary"
@@ -44,7 +44,7 @@
         android:hint="Name"
         android:layout_marginLeft="5dp"
         android:inputType="textPersonName"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:padding="10dp" />
 
     <EditText
@@ -58,7 +58,7 @@
         android:ems="10"
         android:hint="E-mail"
         android:layout_marginLeft="5dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:inputType="textPersonName"
         android:padding="10dp" />
 
@@ -71,7 +71,7 @@
         android:layout_marginTop="71dp"
         android:background="@drawable/textview_background"
         android:ems="10"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="10dp" />
@@ -101,7 +101,7 @@
         android:textAlignment="center"
 
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <EditText
@@ -113,7 +113,7 @@
         android:ems="10"
         android:padding="10dp"
         android:layout_marginLeft="5dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_marginTop="10dp"
         android:background="@drawable/textview_background"
         android:inputType="textPersonName"

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.amanachintyanikhil.blogapp.Settings">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightred"
+        android:id="@+id/settingstb"
+        ></android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/deactivate"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textStyle="normal"
+        android:textSize="18sp"
+        android:paddingTop="6dp"
+        android:textColor="@color/black"
+        android:fontFamily="monospace"
+        android:textAlignment="textStart"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/settingstb"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="18dp"
+        android:text="Deactivate Account"
+        />
+    <View
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/grey"
+        android:layout_below="@id/deactivate"
+        android:layout_marginTop="10dp"
+        ></View>
+</RelativeLayout>
